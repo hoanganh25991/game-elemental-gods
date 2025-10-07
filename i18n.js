@@ -132,11 +132,10 @@ export function renderInstructions(container) {
 
 /**
  * Set active language and persist to localStorage.
- * Non-blocking: immediately applies keys so the UI updates without waiting for fetch.
- * When the JSON finishes loading, translations are re-applied.
+ * Returns a promise that resolves when the locale is loaded.
  */
 export function setLanguage(lang) {
-  if (!lang) return;
+  if (!lang) return Promise.resolve();
   currentLang = lang;
   try {
     localStorage.setItem(STORAGE_KEY, lang);
@@ -144,14 +143,11 @@ export function setLanguage(lang) {
     // ignore
   }
 
-  // Apply immediate (will show keys if not loaded)
-  applyTranslations(document);
-  const instr = document.getElementById("settingsInstructions");
-  if (instr) renderInstructions(instr);
-
   // Load and re-apply when ready
-  loadLocale(lang).then(() => {
+  // Return the promise so callers can await it
+  return loadLocale(lang).then(() => {
     applyTranslations(document);
+    const instr = document.getElementById("settingsInstructions");
     if (instr) renderInstructions(instr);
   });
 }
@@ -159,6 +155,7 @@ export function setLanguage(lang) {
 /**
  * Initialize i18n. Default language is Vietnamese.
  * Ensures localStorage has a value and starts loading the selected locale.
+ * Returns a promise that resolves when the locale is loaded.
  */
 export function initI18n() {
   try {
@@ -183,7 +180,8 @@ export function initI18n() {
   if (instr) renderInstructions(instr);
 
   // Load selected locale and re-apply once it's available
-  loadLocale(currentLang).then(() => {
+  // Return the promise so callers can await it
+  return loadLocale(currentLang).then(() => {
     applyTranslations(document);
     if (instr) renderInstructions(instr);
   });
