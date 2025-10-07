@@ -1,17 +1,14 @@
 {
   "title": "Thần Nguyên Tố - Đấu Trường Vĩ Đại",
-  "selectChampion": "CHỌN VỊ THẦN CỦA BẠN",
-  "divineChampion": "CHIẾN THẦN THẦN THÁNH",
-  "enterBattle": "THAM GIA CHIẾN ĐẤU",
-  "back": "Quay lại",
-  "divineAbilities": "Kỹ Năng Thần Thánh",
-  "divinePowers": "Sức Mạnh Thần Thánh",
-  "about": "Giới Thiệu",
   
-  "stats": {
+  "ui": {
+    "heroRank": "VỊ THẦN #1",
     "power": "SỨC MẠNH",
     "control": "KIỂM SOÁT",
-    "wisdom": "TRÍ TUỆ"
+    "wisdom": "TRÍ TUỆ",
+    "selectHero": "CHỌN VỊ THẦN",
+    "abilities": "KỸ NĂNG THẦN THÁNH",
+    "play": "CHƠI NGAY"
   },
   
   "heroes": {
