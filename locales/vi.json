@@ -1,0 +1,163 @@
+{
+  "title": "Thần Nguyên Tố - Đấu Trường Vĩ Đại",
+  "selectChampion": "CHỌN VỊ THẦN CỦA BẠN",
+  "divineChampion": "CHIẾN THẦN THẦN THÁNH",
+  "enterBattle": "THAM GIA CHIẾN ĐẤU",
+  "back": "Quay lại",
+  "divineAbilities": "Kỹ Năng Thần Thánh",
+  "divinePowers": "Sức Mạnh Thần Thánh",
+  "about": "Giới Thiệu",
+  
+  "stats": {
+    "power": "SỨC MẠNH",
+    "control": "KIỂM SOÁT",
+    "wisdom": "TRÍ TUỆ"
+  },
+  
+  "heroes": {
+    "got": {
+      "name": "THOR",
+      "title": "Thần Sấm Sét",
+      "tagline": "Chủ nhân của sấm chớp và bão tố, điều khiển cơn thịnh nộ của bầu trời.",
+      "description": "Chủ nhân của sấm chớp và bão tố, Thor điều khiển cơn thịnh nộ của bầu trời. Với mỗi cú đánh của chiếc búa thần uy lực, sấm sét vang dội khắp chiến trường, mang công lý thần thánh đến với những kẻ dám thách thức cơn bão.",
+      "abilities": [
+        {
+          "name": "Tia Sét",
+          "desc": "Triệu hồi những tia sét hủy diệt từ bầu trời"
+        },
+        {
+          "name": "Lá Chắn Bão",
+          "desc": "Tạo ra hàng rào bảo vệ từ những luồng gió xoáy"
+        },
+        {
+          "name": "Sấm Dậy Đất",
+          "desc": "Giải phóng sóng xung kích làm choáng kẻ địch"
+        },
+        {
+          "name": "Cuồng Nộ Thần Thánh",
+          "desc": "Truyền năng lượng điện thuần khiết"
+        }
+      ]
+    },
+    "gof": {
+      "name": "VULCAN",
+      "title": "Thần Lửa",
+      "tagline": "Sinh ra từ trái tim núi lửa, vung ngọn lửa bất diệt.",
+      "description": "Sinh ra từ trái tim núi lửa, Vulcan nắm giữ ngọn lửa vĩnh cửu. Sức mạnh của hắn thiêu đốt mặt đất, biến kẻ thù thành tro bụi và rèn nên những thế giới mới từ lò luyện kim của sự hủy diệt.",
+      "abilities": [
+        {
+          "name": "Hỏa Ngục Bùng Nổ",
+          "desc": "Giải phóng dòng ngọn lửa dữ dội"
+        },
+        {
+          "name": "Núi Lửa Phun Trào",
+          "desc": "Gây ra sự biến động núi lửa"
+        },
+        {
+          "name": "Phượng Hoàng Tái Sinh",
+          "desc": "Hồi sinh qua ngọn lửa"
+        },
+        {
+          "name": "Bùng Nổ Mặt Trời",
+          "desc": "Làm mù kẻ địch bằng nhiệt độ cực cao"
+        }
+      ]
+    },
+    "gow": {
+      "name": "POSEIDON",
+      "title": "Thần Nước",
+      "tagline": "Chúa tể đại dương, thống trị thủy triều và vực sâu.",
+      "description": "Chúa tể của đại dương và thống lĩnh thủy triều, Poseidon kiểm soát dòng chảy của chính nước. Sức mạnh của ngài có thể chữa lành hoặc hủy diệt, mang đến mưa ban sự sống hoặc sóng thần tàn phá.",
+      "abilities": [
+        {
+          "name": "Sóng Thủy Triều",
+          "desc": "Triệu hồi những con sóng khổng lồ hủy diệt"
+        },
+        {
+          "name": "Lá Chắn Nước",
+          "desc": "Tạo hàng rào bảo vệ bằng nước"
+        },
+        {
+          "name": "Xoáy Nước",
+          "desc": "Nhốt kẻ địch trong dòng xoáy"
+        },
+        {
+          "name": "Vực Sâu Băng Giá",
+          "desc": "Đóng băng nước thành băng sát thương"
+        }
+      ]
+    },
+    "goa": {
+      "name": "ZEPHYR",
+      "title": "Thần Không Khí",
+      "tagline": "Nhanh như gió, tự do như bầu trời, điều khiển hơi thở sự sống.",
+      "description": "Nhanh như gió và tự do như bầu trời, Zephyr điều khiển chính hơi thở của thế giới. Vô hình nhưng hiện hữu khắp nơi, thần không khí tấn công với tốc độ của cơn bão và sự uyển chuyển của làn gió nhẹ.",
+      "abilities": [
+        {
+          "name": "Xoáy Gió",
+          "desc": "Tạo ra những vòng xoáy gió hủy diệt"
+        },
+        {
+          "name": "Lốc Xoáy Tấn Công",
+          "desc": "Triệu hồi lốc xoáy cục bộ"
+        },
+        {
+          "name": "Bước Mây",
+          "desc": "Di chuyển với tốc độ siêu phàm"
+        },
+        {
+          "name": "Hơi Thở Sự Sống",
+          "desc": "Truyền luồng gió chữa lành"
+        }
+      ]
+    },
+    "gom": {
+      "name": "HEPHAESTUS",
+      "title": "Thần Kim Loại",
+      "tagline": "Rèn trong lửa, tôi luyện bởi thời gian, chủ nhân của lò rèn.",
+      "description": "Được rèn trong những mỏ sâu nhất và tôi luyện bởi ngọn lửa vĩnh cửu, Hephaestus tạo hình kim loại với độ chính xác thần thánh. Những tạo tác của ngài không thể phá hủy, áo giáp không thể xuyên thủng, ý chí cứng rắn như thép.",
+      "abilities": [
+        {
+          "name": "Lò Rèn Thép",
+          "desc": "Chế tạo vũ khí không thể phá hủy"
+        },
+        {
+          "name": "Pháo Đài Sắt",
+          "desc": "Tạo hàng phòng thủ không thể phá vỡ"
+        },
+        {
+          "name": "Thao Túng Kim Loại",
+          "desc": "Kiểm soát mọi vật thể kim loại"
+        },
+        {
+          "name": "Búa Thời Đại",
+          "desc": "Tấn công với sức mạnh nghiền nát"
+        }
+      ]
+    },
+    "goe": {
+      "name": "GAIA",
+      "title": "Thần Đất",
+      "tagline": "Cổ xưa và vĩnh cửu, hiện thân sức mạnh của núi non.",
+      "description": "Cổ xưa và vĩnh cửu, Gaia hiện thân sức mạnh của núi non và sự phì nhiêu của đất đai. Với rễ sâu hơn cả thời gian, thần đất mang lại cả sự phát triển nuôi dưỡng và động đất tàn phá.",
+      "abilities": [
+        {
+          "name": "Núi Non Vươn Cao",
+          "desc": "Triệu hồi những trụ đá khổng lồ"
+        },
+        {
+          "name": "Phúc Lành Tự Nhiên",
+          "desc": "Chữa lành qua năng lượng đất"
+        },
+        {
+          "name": "Động Đất",
+          "desc": "Gây ra những trận động đất tàn phá"
+        },
+        {
+          "name": "Giáp Đá",
+          "desc": "Bao phủ bản thân bằng lớp đá không thể xuyên thủng"
+        }
+      ]
+    }
+  }
+}

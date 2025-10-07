@@ -1,0 +1,163 @@
+{
+  "title": "Elemental Gods - The Grand Stage",
+  "selectChampion": "SELECT YOUR CHAMPION",
+  "divineChampion": "DIVINE CHAMPION",
+  "enterBattle": "ENTER BATTLE",
+  "back": "Back",
+  "divineAbilities": "Divine Abilities",
+  "divinePowers": "Divine Powers",
+  "about": "About",
+  
+  "stats": {
+    "power": "POWER",
+    "control": "CONTROL",
+    "wisdom": "WISDOM"
+  },
+  
+  "heroes": {
+    "got": {
+      "name": "THOR",
+      "title": "God of Thunder",
+      "tagline": "Master of lightning and storms, commanding the fury of the heavens.",
+      "description": "Master of lightning and storms, Thor commands the fury of the heavens. With each strike of his mighty hammer, thunder echoes across the battlefield, bringing divine justice to those who dare challenge the storm.",
+      "abilities": [
+        {
+          "name": "Lightning Strike",
+          "desc": "Summon devastating bolts from the sky"
+        },
+        {
+          "name": "Storm Shield",
+          "desc": "Create a protective barrier of swirling winds"
+        },
+        {
+          "name": "Thunderclap",
+          "desc": "Release a shockwave that stuns enemies"
+        },
+        {
+          "name": "Divine Fury",
+          "desc": "Channel pure electrical energy"
+        }
+      ]
+    },
+    "gof": {
+      "name": "VULCAN",
+      "title": "God of Fire",
+      "tagline": "Born from the heart of a volcano, wielding the eternal flame.",
+      "description": "Born from the heart of a volcano, Vulcan wields the eternal flame. His power scorches the earth, turning enemies to ash and forging new worlds from the crucible of destruction.",
+      "abilities": [
+        {
+          "name": "Inferno Blast",
+          "desc": "Unleash a torrent of flames"
+        },
+        {
+          "name": "Magma Eruption",
+          "desc": "Cause volcanic upheaval"
+        },
+        {
+          "name": "Phoenix Rise",
+          "desc": "Regenerate through flames"
+        },
+        {
+          "name": "Solar Flare",
+          "desc": "Blind enemies with intense heat"
+        }
+      ]
+    },
+    "gow": {
+      "name": "POSEIDON",
+      "title": "God of Water",
+      "tagline": "Ruler of the oceans, master of the tides and the deep.",
+      "description": "Ruler of the oceans and master of the tides, Poseidon controls the ebb and flow of water itself. His power can heal or destroy, bringing life-giving rain or devastating tsunamis.",
+      "abilities": [
+        {
+          "name": "Tidal Wave",
+          "desc": "Summon massive waves of destruction"
+        },
+        {
+          "name": "Aqua Shield",
+          "desc": "Create a protective water barrier"
+        },
+        {
+          "name": "Whirlpool",
+          "desc": "Trap enemies in swirling currents"
+        },
+        {
+          "name": "Frozen Depths",
+          "desc": "Freeze water into deadly ice"
+        }
+      ]
+    },
+    "goa": {
+      "name": "ZEPHYR",
+      "title": "God of Air",
+      "tagline": "Swift as the wind, free as the sky, commanding the breath of life.",
+      "description": "Swift as the wind and free as the sky, Zephyr commands the very breath of the world. Invisible yet omnipresent, the air god strikes with the speed of a hurricane and the grace of a gentle breeze.",
+      "abilities": [
+        {
+          "name": "Cyclone Spin",
+          "desc": "Create devastating wind vortexes"
+        },
+        {
+          "name": "Tornado Strike",
+          "desc": "Summon a localized twister"
+        },
+        {
+          "name": "Cloud Step",
+          "desc": "Move with supernatural speed"
+        },
+        {
+          "name": "Breath of Life",
+          "desc": "Channel healing winds"
+        }
+      ]
+    },
+    "gom": {
+      "name": "HEPHAESTUS",
+      "title": "God of Metal",
+      "tagline": "Forged in fire, tempered by time, master of the forge.",
+      "description": "Forged in the deepest mines and tempered by eternal flames, Hephaestus shapes metal with divine precision. His creations are unbreakable, his armor impenetrable, his will unyielding as steel.",
+      "abilities": [
+        {
+          "name": "Steel Forge",
+          "desc": "Craft indestructible weapons"
+        },
+        {
+          "name": "Iron Fortress",
+          "desc": "Create an unbreakable defense"
+        },
+        {
+          "name": "Metal Manipulation",
+          "desc": "Control all metallic objects"
+        },
+        {
+          "name": "Hammer of Ages",
+          "desc": "Strike with crushing force"
+        }
+      ]
+    },
+    "goe": {
+      "name": "GAIA",
+      "title": "God of Earth",
+      "tagline": "Ancient and eternal, embodying the strength of mountains.",
+      "description": "Ancient and eternal, Gaia embodies the strength of mountains and the fertility of soil. With roots deeper than time itself, the earth god brings both nurturing growth and devastating earthquakes.",
+      "abilities": [
+        {
+          "name": "Mountain Rise",
+          "desc": "Summon massive stone pillars"
+        },
+        {
+          "name": "Nature's Blessing",
+          "desc": "Heal through earth energy"
+        },
+        {
+          "name": "Seismic Slam",
+          "desc": "Cause devastating earthquakes"
+        },
+        {
+          "name": "Stone Armor",
+          "desc": "Coat yourself in impenetrable rock"
+        }
+      ]
+    }
+  }
+}

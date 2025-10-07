@@ -1,3 +1,6 @@
+// Import i18n module
+import { initI18n, setLanguage, getLanguage, t, loadLocale } from '../i18n.js';
+
 // Hero Data Configuration
 const heroData = {
     got: {
@@ -199,7 +202,7 @@ function updateStage(heroId) {
         };
     }, 300);
 
-    // Update text content with animation
+    // Update text content with animation using translations
     const heroName = document.querySelector('.stage-hero-name');
     const heroTitle = document.querySelector('.stage-hero-title');
     const heroTagline = document.querySelector('.hero-tagline');
@@ -209,9 +212,9 @@ function updateStage(heroId) {
     heroTagline.style.animation = 'none';
 
     setTimeout(() => {
-        heroName.textContent = hero.name;
-        heroTitle.textContent = hero.title;
-        heroTagline.textContent = hero.tagline;
+        heroName.textContent = t(`heroes.${heroId}.name`);
+        heroTitle.textContent = t(`heroes.${heroId}.title`);
+        heroTagline.textContent = t(`heroes.${heroId}.tagline`);
 
         heroName.style.animation = 'nameReveal 0.8s ease-out';
         heroTitle.style.animation = 'fadeInDown 0.8s ease-out 0.2s backwards';
@@ -321,15 +324,15 @@ function showAbilitiesModal(heroId) {
     // Clear existing abilities
     abilitiesGrid.innerHTML = '';
 
-    // Add ability cards
+    // Add ability cards using translations
     hero.abilities.forEach((ability, index) => {
         const abilityCard = document.createElement('div');
         abilityCard.className = 'ability-card';
         abilityCard.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s backwards`;
         abilityCard.innerHTML = `
             <div style="font-size: 2.5rem; margin-bottom: 1rem;">${ability.icon}</div>
-            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--theme-accent);">${ability.name}</h3>
-            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">${ability.desc}</p>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--theme-accent);">${t(`heroes.${heroId}.abilities.${index}.name`)}</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">${t(`heroes.${heroId}.abilities.${index}.desc`)}</p>
         `;
         abilitiesGrid.appendChild(abilityCard);
     });
@@ -343,11 +346,87 @@ function hideAbilitiesModal() {
     modal.classList.remove('active');
 }
 
+// Update UI labels with translations
+function updateUILabels() {
+    // Update hero rank
+    const heroRank = document.querySelector('.hero-rank');
+    if (heroRank) {
+        heroRank.textContent = t('ui.heroRank');
+    }
+
+    // Update stat labels
+    const statLabels = document.querySelectorAll('.stat-label');
+    if (statLabels.length >= 3) {
+        statLabels[0].textContent = t('ui.power');
+        statLabels[1].textContent = t('ui.control');
+        statLabels[2].textContent = t('ui.wisdom');
+    }
+
+    // Update stack title
+    const stackTitle = document.querySelector('.stack-title');
+    if (stackTitle) {
+        stackTitle.textContent = t('ui.selectHero');
+    }
+
+    // Update modal title
+    const modalTitle = document.getElementById('modal-title');
+    if (modalTitle) {
+        modalTitle.textContent = t('ui.abilities');
+    }
+
+    // Update play button
+    const playButton = document.getElementById('play-button');
+    if (playButton) {
+        playButton.textContent = t('ui.play');
+    }
+}
+
+// Handle language change
+async function changeLanguage(lang) {
+    await setLanguage(lang);
+    
+    // Update all UI labels
+    updateUILabels();
+    
+    // Refresh current hero display
+    updateStage(currentHero);
+    
+    // Update active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+}
+
 // Initialize the application
-function init() {
+async function init() {
+    // Initialize i18n system
+    await initI18n();
+    
+    // Update all UI labels
+    updateUILabels();
+    
     // Set initial theme
     applyTheme(currentHero);
     updateStage(currentHero);
+
+    // Add language switcher event listeners
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+
+    // Set active language button based on current language
+    const currentLang = getLanguage();
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.getAttribute('data-lang') === currentLang) {
+            btn.classList.add('active');
+        }
+    });
 
     // Add event listeners to stack cards
     document.querySelectorAll('.stack-card').forEach(card => {
