@@ -11,6 +11,15 @@
     "play": "PLAY NOW"
   },
   
+  "elements": {
+    "thunder": "Thunder",
+    "fire": "Fire",
+    "water": "Water",
+    "air": "Air",
+    "metal": "Metal",
+    "earth": "Earth"
+  },
+  
   "heroes": {
     "got": {
       "name": "THOR",

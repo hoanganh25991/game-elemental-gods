@@ -379,6 +379,30 @@ function updateUILabels() {
     if (playButton) {
         playButton.textContent = t('ui.play');
     }
+
+    // Update card names
+    updateCardNames();
+}
+
+// Update card names with element translations
+function updateCardNames() {
+    const elementMap = {
+        'got': 'thunder',
+        'gof': 'fire',
+        'gow': 'water',
+        'goa': 'air',
+        'gom': 'metal',
+        'goe': 'earth'
+    };
+
+    document.querySelectorAll('.stack-card').forEach(card => {
+        const heroId = card.getAttribute('data-hero');
+        const elementKey = elementMap[heroId];
+        const cardNameElement = card.querySelector('.card-name');
+        if (cardNameElement && elementKey) {
+            cardNameElement.textContent = t(`elements.${elementKey}`);
+        }
+    });
 }
 
 // Handle language change

@@ -11,6 +11,15 @@
     "play": "CHƠI NGAY"
   },
   
+  "elements": {
+    "thunder": "Sấm Sét",
+    "fire": "Lửa",
+    "water": "Nước",
+    "air": "Không Khí",
+    "metal": "Kim Loại",
+    "earth": "Đất"
+  },
+  
   "heroes": {
     "got": {
       "name": "THOR",
