@@ -1,8 +1,10 @@
 // Hero Data Configuration
 const heroData = {
     got: {
+        id: 'got',
         name: 'THOR',
         title: 'God of Thunder',
+        tagline: 'Master of lightning and storms, commanding the fury of the heavens.',
         description: 'Master of lightning and storms, Thor commands the fury of the heavens. With each strike of his mighty hammer, thunder echoes across the battlefield, bringing divine justice to those who dare challenge the storm.',
         stats: {
             power: 95,
@@ -10,10 +12,10 @@ const heroData = {
             wisdom: 82
         },
         abilities: [
-            '⚡ Lightning Strike - Summon devastating bolts from the sky',
-            '🌩️ Storm Shield - Create a protective barrier of swirling winds',
-            '⛈️ Thunderclap - Release a shockwave that stuns enemies',
-            '🔱 Divine Fury - Channel pure electrical energy'
+            { icon: '⚡', name: 'Lightning Strike', desc: 'Summon devastating bolts from the sky' },
+            { icon: '🌩️', name: 'Storm Shield', desc: 'Create a protective barrier of swirling winds' },
+            { icon: '⛈️', name: 'Thunderclap', desc: 'Release a shockwave that stuns enemies' },
+            { icon: '🔱', name: 'Divine Fury', desc: 'Channel pure electrical energy' }
         ],
         theme: {
             dark: '#0b1a2b',
@@ -21,12 +23,14 @@ const heroData = {
             secondary: '#123a6b',
             accent: '#ffde59'
         },
-        symbol: 'M50 10 L30 45 H45 L40 75 L70 40 H55 L60 10 Z',
+        image: 'image/got-heroic-figure-standing.png',
         gameUrl: 'https://hoanganh25991.github.io/game-got'
     },
     gof: {
+        id: 'gof',
         name: 'VULCAN',
         title: 'God of Fire',
+        tagline: 'Born from the heart of a volcano, wielding the eternal flame.',
         description: 'Born from the heart of a volcano, Vulcan wields the eternal flame. His power scorches the earth, turning enemies to ash and forging new worlds from the crucible of destruction.',
         stats: {
             power: 92,
@@ -34,10 +38,10 @@ const heroData = {
             wisdom: 85
         },
         abilities: [
-            '🔥 Inferno Blast - Unleash a torrent of flames',
-            '🌋 Magma Eruption - Cause volcanic upheaval',
-            '💥 Phoenix Rise - Regenerate through flames',
-            '🔆 Solar Flare - Blind enemies with intense heat'
+            { icon: '🔥', name: 'Inferno Blast', desc: 'Unleash a torrent of flames' },
+            { icon: '🌋', name: 'Magma Eruption', desc: 'Cause volcanic upheaval' },
+            { icon: '💥', name: 'Phoenix Rise', desc: 'Regenerate through flames' },
+            { icon: '🔆', name: 'Solar Flare', desc: 'Blind enemies with intense heat' }
         ],
         theme: {
             dark: '#1a0a05',
@@ -45,12 +49,14 @@ const heroData = {
             secondary: '#ff8c42',
             accent: '#ffd94a'
         },
-        symbol: 'M50 10 Q45 30 50 45 Q55 30 50 10 M50 45 Q35 55 40 75 Q45 60 50 65 Q55 60 60 75 Q65 55 50 45',
+        image: 'image/gof-heroic-figure-standing.png',
         gameUrl: 'https://hoanganh25991.github.io/game-gof'
     },
     gow: {
+        id: 'gow',
         name: 'POSEIDON',
         title: 'God of Water',
+        tagline: 'Ruler of the oceans, master of the tides and the deep.',
         description: 'Ruler of the oceans and master of the tides, Poseidon controls the ebb and flow of water itself. His power can heal or destroy, bringing life-giving rain or devastating tsunamis.',
         stats: {
             power: 88,
@@ -58,10 +64,10 @@ const heroData = {
             wisdom: 90
         },
         abilities: [
-            '🌊 Tidal Wave - Summon massive waves of destruction',
-            '💧 Aqua Shield - Create a protective water barrier',
-            '🌀 Whirlpool - Trap enemies in swirling currents',
-            '❄️ Frozen Depths - Freeze water into deadly ice'
+            { icon: '🌊', name: 'Tidal Wave', desc: 'Summon massive waves of destruction' },
+            { icon: '💧', name: 'Aqua Shield', desc: 'Create a protective water barrier' },
+            { icon: '🌀', name: 'Whirlpool', desc: 'Trap enemies in swirling currents' },
+            { icon: '❄️', name: 'Frozen Depths', desc: 'Freeze water into deadly ice' }
         ],
         theme: {
             dark: '#0a1a24',
@@ -69,12 +75,14 @@ const heroData = {
             secondary: '#4dd0e1',
             accent: '#b0e0e6'
         },
-        symbol: 'M50 10 Q35 40 35 60 Q35 80 50 85 Q65 80 65 60 Q65 40 50 10',
+        image: 'image/gow-heroic-figure-standing.png',
         gameUrl: 'https://hoanganh25991.github.io/game-gow'
     },
     goa: {
+        id: 'goa',
         name: 'ZEPHYR',
         title: 'God of Air',
+        tagline: 'Swift as the wind, free as the sky, commanding the breath of life.',
         description: 'Swift as the wind and free as the sky, Zephyr commands the very breath of the world. Invisible yet omnipresent, the air god strikes with the speed of a hurricane and the grace of a gentle breeze.',
         stats: {
             power: 90,
@@ -82,10 +90,10 @@ const heroData = {
             wisdom: 94
         },
         abilities: [
-            '💨 Cyclone Spin - Create devastating wind vortexes',
-            '🌪️ Tornado Strike - Summon a localized twister',
-            '☁️ Cloud Step - Move with supernatural speed',
-            '🌬️ Breath of Life - Channel healing winds'
+            { icon: '💨', name: 'Cyclone Spin', desc: 'Create devastating wind vortexes' },
+            { icon: '🌪️', name: 'Tornado Strike', desc: 'Summon a localized twister' },
+            { icon: '☁️', name: 'Cloud Step', desc: 'Move with supernatural speed' },
+            { icon: '🌬️', name: 'Breath of Life', desc: 'Channel healing winds' }
         ],
         theme: {
             dark: '#0a0f1a',
@@ -93,12 +101,14 @@ const heroData = {
             secondary: '#e0f7ff',
             accent: '#d4e8f0'
         },
-        symbol: 'M20 30 Q50 20 80 30 M20 50 Q50 40 80 50 M20 70 Q50 60 80 70',
+        image: 'image/goa-heroic-figure-standing.png',
         gameUrl: 'https://hoanganh25991.github.io/game-goa'
     },
     gom: {
+        id: 'gom',
         name: 'HEPHAESTUS',
         title: 'God of Metal',
+        tagline: 'Forged in fire, tempered by time, master of the forge.',
         description: 'Forged in the deepest mines and tempered by eternal flames, Hephaestus shapes metal with divine precision. His creations are unbreakable, his armor impenetrable, his will unyielding as steel.',
         stats: {
             power: 85,
@@ -106,10 +116,10 @@ const heroData = {
             wisdom: 88
         },
         abilities: [
-            '⚒️ Steel Forge - Craft indestructible weapons',
-            '🛡️ Iron Fortress - Create an unbreakable defense',
-            '⚙️ Metal Manipulation - Control all metallic objects',
-            '🔨 Hammer of Ages - Strike with crushing force'
+            { icon: '⚒️', name: 'Steel Forge', desc: 'Craft indestructible weapons' },
+            { icon: '🛡️', name: 'Iron Fortress', desc: 'Create an unbreakable defense' },
+            { icon: '⚙️', name: 'Metal Manipulation', desc: 'Control all metallic objects' },
+            { icon: '🔨', name: 'Hammer of Ages', desc: 'Strike with crushing force' }
         ],
         theme: {
             dark: '#1b1f27',
@@ -117,12 +127,14 @@ const heroData = {
             secondary: '#b4b4c8',
             accent: '#e6b478'
         },
-        symbol: 'M30 30 L70 30 L70 70 L30 70 Z M50 30 L70 50 L50 70 L30 50 Z',
+        image: 'image/gom-heroic-figure-standing.png',
         gameUrl: 'https://hoanganh25991.github.io/game-gom'
     },
     goe: {
+        id: 'goe',
         name: 'GAIA',
         title: 'God of Earth',
+        tagline: 'Ancient and eternal, embodying the strength of mountains.',
         description: 'Ancient and eternal, Gaia embodies the strength of mountains and the fertility of soil. With roots deeper than time itself, the earth god brings both nurturing growth and devastating earthquakes.',
         stats: {
             power: 87,
@@ -130,10 +142,10 @@ const heroData = {
             wisdom: 92
         },
         abilities: [
-            '🏔️ Mountain Rise - Summon massive stone pillars',
-            '🌿 Nature\'s Blessing - Heal through earth energy',
-            '⛰️ Seismic Slam - Cause devastating earthquakes',
-            '🪨 Stone Armor - Coat yourself in impenetrable rock'
+            { icon: '🏔️', name: 'Mountain Rise', desc: 'Summon massive stone pillars' },
+            { icon: '🌿', name: "Nature's Blessing", desc: 'Heal through earth energy' },
+            { icon: '⛰️', name: 'Seismic Slam', desc: 'Cause devastating earthquakes' },
+            { icon: '🪨', name: 'Stone Armor', desc: 'Coat yourself in impenetrable rock' }
         ],
         theme: {
             dark: '#2d2a26',
@@ -141,71 +153,15 @@ const heroData = {
             secondary: '#b08e63',
             accent: '#caa36b'
         },
-        symbol: 'M30 70 L40 50 L30 40 L50 30 L60 45 L70 35 L70 70 Z',
+        image: 'image/goe-heroic-figure-standing.png',
         gameUrl: 'https://hoanganh25991.github.io/game-goe'
     }
 };
 
-// Particle generation
-function createAmbientParticles() {
-    const container = document.querySelector('.ambient-particles');
-    if (!container) return;
+// Current active hero
+let currentHero = 'got';
 
-    for (let i = 0; i < 30; i++) {
-        const particle = document.createElement('div');
-        particle.style.position = 'absolute';
-        particle.style.width = Math.random() * 4 + 2 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.background = `rgba(${Math.random() * 100 + 155}, ${Math.random() * 100 + 155}, 255, ${Math.random() * 0.5 + 0.3})`;
-        particle.style.borderRadius = '50%';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animation = `float ${Math.random() * 10 + 5}s ease-in-out infinite`;
-        particle.style.animationDelay = Math.random() * 5 + 's';
-        container.appendChild(particle);
-    }
-}
-
-function createHeroParticles(container, heroId) {
-    const hero = heroData[heroId];
-    if (!container || !hero) return;
-
-    // Clear existing particles
-    container.innerHTML = '';
-
-    const colors = {
-        got: ['#1e90ff', '#ffde59'],
-        gof: ['#ff6b35', '#ffd94a'],
-        gow: ['#00bfff', '#4dd0e1'],
-        goa: ['#c8f0ff', '#e0f7ff'],
-        gom: ['#b87333', '#b4b4c8'],
-        goe: ['#6a8f4e', '#caa36b']
-    };
-
-    const heroColors = colors[heroId] || colors.got;
-
-    for (let i = 0; i < 20; i++) {
-        const particle = document.createElement('div');
-        const size = Math.random() * 6 + 3;
-        const angle = (i / 20) * Math.PI * 2;
-        const distance = 45 + Math.random() * 10;
-        
-        particle.style.position = 'absolute';
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-        particle.style.background = heroColors[Math.floor(Math.random() * heroColors.length)];
-        particle.style.borderRadius = '50%';
-        particle.style.left = 50 + Math.cos(angle) * distance + '%';
-        particle.style.top = 50 + Math.sin(angle) * distance + '%';
-        particle.style.transform = 'translate(-50%, -50%)';
-        particle.style.boxShadow = `0 0 ${size * 2}px ${heroColors[0]}`;
-        particle.style.opacity = Math.random() * 0.6 + 0.4;
-        
-        container.appendChild(particle);
-    }
-}
-
-// Theme application
+// Apply theme to page
 function applyTheme(heroId) {
     const hero = heroData[heroId];
     if (!hero) return;
@@ -215,119 +171,256 @@ function applyTheme(heroId) {
     root.style.setProperty('--theme-primary', hero.theme.primary);
     root.style.setProperty('--theme-secondary', hero.theme.secondary);
     root.style.setProperty('--theme-accent', hero.theme.accent);
+
+    // Update body class for theme-specific animations
+    document.body.className = `theme-${heroId}`;
 }
 
-// Show detail page
-function showDetailPage(heroId) {
+// Update stage with hero data
+function updateStage(heroId) {
     const hero = heroData[heroId];
     if (!hero) return;
 
-    // Apply theme
+    // Apply theme with smooth transition
     applyTheme(heroId);
 
-    // Get elements
-    const detailPage = document.getElementById('detail-page');
-    const heroCollection = document.querySelector('.hero-collection');
+    // Update hero image with fade effect
+    const heroImage = document.getElementById('hero-image');
+    heroImage.style.opacity = '0';
     
-    // Populate content
-    document.querySelector('.detail-hero-name').textContent = hero.name;
-    document.querySelector('.detail-hero-title').textContent = hero.title;
-    document.querySelector('.hero-description').textContent = hero.description;
-    
-    // Set stats
-    const statValues = detailPage.querySelectorAll('.stat-value');
-    statValues[0].style.width = hero.stats.power + '%';
-    statValues[1].style.width = hero.stats.control + '%';
-    statValues[2].style.width = hero.stats.wisdom + '%';
-    
-    // Set abilities
-    const abilitiesList = document.querySelector('.abilities-list');
-    abilitiesList.innerHTML = hero.abilities.map(ability => `<li>${ability}</li>`).join('');
-    
-    // Create hero icon
-    const largeIcon = document.querySelector('.hero-large-icon');
-    largeIcon.innerHTML = `
-        <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; filter: drop-shadow(0 0 30px ${hero.theme.primary});">
-            <path d="${hero.symbol}" fill="${hero.theme.primary}" stroke="${hero.theme.accent}" stroke-width="2"/>
-        </svg>
-    `;
-    
-    // Create particles
-    const particlesContainer = document.querySelector('.showcase-particles');
-    createHeroParticles(particlesContainer, heroId);
-    
+    setTimeout(() => {
+        heroImage.src = hero.image;
+        heroImage.onerror = function() {
+            this.style.display = 'none';
+        };
+        heroImage.onload = function() {
+            this.style.display = 'block';
+            this.style.opacity = '1';
+        };
+    }, 300);
+
+    // Update text content with animation
+    const heroName = document.querySelector('.stage-hero-name');
+    const heroTitle = document.querySelector('.stage-hero-title');
+    const heroTagline = document.querySelector('.hero-tagline');
+
+    heroName.style.animation = 'none';
+    heroTitle.style.animation = 'none';
+    heroTagline.style.animation = 'none';
+
+    setTimeout(() => {
+        heroName.textContent = hero.name;
+        heroTitle.textContent = hero.title;
+        heroTagline.textContent = hero.tagline;
+
+        heroName.style.animation = 'nameReveal 0.8s ease-out';
+        heroTitle.style.animation = 'fadeInDown 0.8s ease-out 0.2s backwards';
+        heroTagline.style.animation = 'fadeInUp 0.8s ease-out 0.3s backwards';
+    }, 50);
+
+    // Update stats with animation
+    const statValues = document.querySelectorAll('.stat-value');
+    statValues[0].textContent = hero.stats.power;
+    statValues[1].textContent = hero.stats.control;
+    statValues[2].textContent = hero.stats.wisdom;
+
+    // Animate stat circles
+    document.querySelectorAll('.stat-circle').forEach((circle, index) => {
+        circle.style.animation = 'none';
+        setTimeout(() => {
+            circle.style.animation = `fadeInUp 0.8s ease-out ${0.4 + index * 0.1}s backwards`;
+        }, 50);
+    });
+
     // Update play button
-    const playButton = document.querySelector('.play-button');
+    const playButton = document.getElementById('play-button');
     playButton.onclick = () => {
         window.open(hero.gameUrl, '_blank');
     };
-    
-    // Show detail page with animation
-    heroCollection.style.display = 'none';
-    detailPage.style.display = 'block';
-    
-    // Scroll to top
-    detailPage.scrollTop = 0;
+
+    // Create elemental particles
+    createElementalParticles(heroId);
+
+    // Update current hero
+    currentHero = heroId;
 }
 
-// Hide detail page
-function hideDetailPage() {
-    const detailPage = document.getElementById('detail-page');
-    const heroCollection = document.querySelector('.hero-collection');
+// Create dynamic elemental particles
+function createElementalParticles(heroId) {
+    const container = document.getElementById('stage-particles');
+    if (!container) return;
+
+    // Clear existing particles
+    container.innerHTML = '';
+
+    const hero = heroData[heroId];
+    const particleCount = 40;
     
-    detailPage.style.display = 'none';
-    heroCollection.style.display = 'block';
-    
-    // Reset to default theme
-    applyTheme('got');
+    const particleColors = {
+        got: ['#1e90ff', '#ffde59', '#87ceeb'],
+        gof: ['#ff6b35', '#ffd94a', '#ff8c42'],
+        gow: ['#00bfff', '#4dd0e1', '#b0e0e6'],
+        goa: ['#c8f0ff', '#e0f7ff', '#d4e8f0'],
+        gom: ['#b87333', '#b4b4c8', '#6f7b84'],
+        goe: ['#6a8f4e', '#caa36b', '#b08e63']
+    };
+
+    const colors = particleColors[heroId] || particleColors.got;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        const size = Math.random() * 6 + 3;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
+        const duration = Math.random() * 10 + 8;
+        const delay = Math.random() * 5;
+
+        particle.style.position = 'absolute';
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.background = color;
+        particle.style.borderRadius = '50%';
+        particle.style.left = startX + '%';
+        particle.style.top = startY + '%';
+        particle.style.boxShadow = `0 0 ${size * 3}px ${color}`;
+        particle.style.opacity = Math.random() * 0.6 + 0.3;
+        particle.style.animation = `particleFloat ${duration}s ease-in-out infinite`;
+        particle.style.animationDelay = delay + 's';
+        particle.style.pointerEvents = 'none';
+
+        container.appendChild(particle);
+    }
 }
 
-// Initialize
+// Handle card selection
+function selectHero(heroId) {
+    // Remove active class from all cards
+    document.querySelectorAll('.stack-card').forEach(card => {
+        card.classList.remove('active');
+    });
+
+    // Add active class to selected card
+    const selectedCard = document.querySelector(`.stack-card[data-hero="${heroId}"]`);
+    if (selectedCard) {
+        selectedCard.classList.add('active');
+    }
+
+    // Update stage
+    updateStage(heroId);
+}
+
+// Show abilities modal
+function showAbilitiesModal(heroId) {
+    const hero = heroData[heroId];
+    if (!hero) return;
+
+    const modal = document.getElementById('detail-modal');
+    const abilitiesGrid = document.getElementById('abilities-grid');
+
+    // Clear existing abilities
+    abilitiesGrid.innerHTML = '';
+
+    // Add ability cards
+    hero.abilities.forEach((ability, index) => {
+        const abilityCard = document.createElement('div');
+        abilityCard.className = 'ability-card';
+        abilityCard.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s backwards`;
+        abilityCard.innerHTML = `
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">${ability.icon}</div>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--theme-accent);">${ability.name}</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">${ability.desc}</p>
+        `;
+        abilitiesGrid.appendChild(abilityCard);
+    });
+
+    modal.classList.add('active');
+}
+
+// Hide abilities modal
+function hideAbilitiesModal() {
+    const modal = document.getElementById('detail-modal');
+    modal.classList.remove('active');
+}
+
+// Initialize the application
 function init() {
-    // Create ambient particles
-    createAmbientParticles();
-    
-    // Add click handlers to hero cards
-    const heroCards = document.querySelectorAll('.hero-card');
-    heroCards.forEach(card => {
+    // Set initial theme
+    applyTheme(currentHero);
+    updateStage(currentHero);
+
+    // Add event listeners to stack cards
+    document.querySelectorAll('.stack-card').forEach(card => {
         card.addEventListener('click', () => {
             const heroId = card.getAttribute('data-hero');
-            showDetailPage(heroId);
-        });
-        
-        // Add hover sound effect (visual feedback)
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px) scale(1.05)';
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
+            selectHero(heroId);
         });
     });
-    
-    // Add back button handler
-    const backButton = document.querySelector('.back-button');
-    if (backButton) {
-        backButton.addEventListener('click', hideDetailPage);
+
+    // Modal close button
+    const modalClose = document.getElementById('modal-close');
+    if (modalClose) {
+        modalClose.addEventListener('click', hideAbilitiesModal);
     }
-    
+
+    // Close modal on background click
+    const modal = document.getElementById('detail-modal');
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                hideAbilitiesModal();
+            }
+        });
+    }
+
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            const detailPage = document.getElementById('detail-page');
-            if (detailPage.style.display === 'block') {
-                hideDetailPage();
-            }
+            hideAbilitiesModal();
+        }
+
+        // Arrow key navigation
+        const heroes = ['got', 'gof', 'gow', 'goa', 'gom', 'goe'];
+        const currentIndex = heroes.indexOf(currentHero);
+
+        if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            selectHero(heroes[currentIndex - 1]);
+        } else if (e.key === 'ArrowRight' && currentIndex < heroes.length - 1) {
+            selectHero(heroes[currentIndex + 1]);
         }
     });
-    
-    // Animate power bars on load
+
+    // Add double-click to show abilities
+    document.querySelector('.hero-info-panel').addEventListener('dblclick', () => {
+        showAbilitiesModal(currentHero);
+    });
+
+    // Add info button hint
+    const infoHint = document.createElement('div');
+    infoHint.style.cssText = `
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+        z-index: 1000;
+        pointer-events: none;
+    `;
+    infoHint.textContent = 'Double-click hero panel for abilities • Arrow keys to navigate';
+    document.body.appendChild(infoHint);
+
+    // Fade out hint after 5 seconds
     setTimeout(() => {
-        const powerFills = document.querySelectorAll('.power-fill');
-        powerFills.forEach(fill => {
-            fill.style.transition = 'width 1.5s ease-out';
-        });
-    }, 500);
+        infoHint.style.transition = 'opacity 1s';
+        infoHint.style.opacity = '0';
+        setTimeout(() => infoHint.remove(), 1000);
+    }, 5000);
+
+    console.log('🎮 Elemental Gods - Grand Stage Initialized!');
+    console.log('💡 Tip: Use arrow keys to navigate between heroes');
 }
 
 // Start when DOM is ready
@@ -339,5 +432,5 @@ if (document.readyState === 'loading') {
 
 // Export for potential module usage
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { heroData, showDetailPage, hideDetailPage };
+    module.exports = { heroData, selectHero, applyTheme };
 }

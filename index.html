@@ -3,174 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elemental Gods Collection</title>
+    <title>Elemental Gods - The Grand Stage</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="hero-collection">
-        <!-- Header -->
-        <header class="collection-header">
-            <h1 class="main-title">
-                <span class="title-glow">ELEMENTAL</span>
-                <span class="title-emphasis">GODS</span>
-            </h1>
-            <p class="subtitle">Choose Your Champion</p>
-        </header>
+    <!-- Main Stage Container -->
+    <div class="grand-stage">
+        <!-- Background Effects -->
+        <div class="stage-backdrop">
+            <div class="backdrop-particles"></div>
+            <div class="backdrop-glow"></div>
+        </div>
 
-        <!-- Hero Grid -->
-        <div class="hero-grid">
-            <!-- God of Thunder -->
-            <div class="hero-card" data-hero="got">
-                <div class="hero-card-inner">
-                    <div class="hero-icon thunder-icon">
-                        <div class="icon-particles"></div>
-                        <svg viewBox="0 0 100 100" class="hero-symbol">
-                            <path d="M50 10 L30 45 H45 L40 75 L70 40 H55 L60 10 Z" fill="currentColor"/>
-                        </svg>
+        <!-- Main Hero Showcase Stage -->
+        <div class="hero-stage">
+            <div class="stage-content">
+                <!-- Hero Figure -->
+                <div class="hero-figure">
+                    <img id="hero-image" src="image/got-heroic-figure-standing.png" alt="Hero" onerror="this.style.display='none'">
+                    <div class="figure-glow"></div>
+                </div>
+
+                <!-- Hero Info Panel -->
+                <div class="hero-info-panel">
+                    <div class="hero-rank">DIVINE CHAMPION</div>
+                    <h1 class="stage-hero-name">THOR</h1>
+                    <p class="stage-hero-title">God of Thunder</p>
+                    
+                    <div class="hero-stats-display">
+                        <div class="stat-circle">
+                            <div class="stat-value" data-stat="power">95</div>
+                            <div class="stat-label">POWER</div>
+                        </div>
+                        <div class="stat-circle">
+                            <div class="stat-value" data-stat="control">88</div>
+                            <div class="stat-label">CONTROL</div>
+                        </div>
+                        <div class="stat-circle">
+                            <div class="stat-value" data-stat="wisdom">82</div>
+                            <div class="stat-label">WISDOM</div>
+                        </div>
                     </div>
-                    <h2 class="hero-name">Thunder</h2>
-                    <p class="hero-element">God of Thunder</p>
-                    <div class="hero-power-bar">
-                        <div class="power-fill" style="width: 95%"></div>
-                    </div>
+
+                    <p class="hero-tagline">Master of lightning and storms, commanding the fury of the heavens.</p>
+
+                    <button class="enter-battle-btn" id="play-button">
+                        <span class="btn-text">ENTER BATTLE</span>
+                        <span class="btn-glow"></span>
+                    </button>
                 </div>
             </div>
 
-            <!-- God of Fire -->
-            <div class="hero-card" data-hero="gof">
-                <div class="hero-card-inner">
-                    <div class="hero-icon fire-icon">
-                        <div class="icon-particles"></div>
-                        <svg viewBox="0 0 100 100" class="hero-symbol">
-                            <path d="M50 10 Q45 30 50 45 Q55 30 50 10 M50 45 Q35 55 40 75 Q45 60 50 65 Q55 60 60 75 Q65 55 50 45" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h2 class="hero-name">Fire</h2>
-                    <p class="hero-element">God of Fire</p>
-                    <div class="hero-power-bar">
-                        <div class="power-fill" style="width: 92%"></div>
-                    </div>
-                </div>
-            </div>
+            <!-- Elemental Particles -->
+            <div class="elemental-particles" id="stage-particles"></div>
+        </div>
 
-            <!-- God of Water -->
-            <div class="hero-card" data-hero="gow">
-                <div class="hero-card-inner">
-                    <div class="hero-icon water-icon">
-                        <div class="icon-particles"></div>
-                        <svg viewBox="0 0 100 100" class="hero-symbol">
-                            <path d="M50 10 Q35 40 35 60 Q35 80 50 85 Q65 80 65 60 Q65 40 50 10" fill="currentColor"/>
-                        </svg>
+        <!-- Card Selection Stack -->
+        <div class="card-stack-container">
+            <div class="stack-title">SELECT YOUR CHAMPION</div>
+            <div class="hero-card-stack" id="card-stack">
+                <!-- God of Thunder -->
+                <div class="stack-card active" data-hero="got">
+                    <div class="card-content">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-name">Thunder</div>
                     </div>
-                    <h2 class="hero-name">Water</h2>
-                    <p class="hero-element">God of Water</p>
-                    <div class="hero-power-bar">
-                        <div class="power-fill" style="width: 88%"></div>
-                    </div>
+                    <div class="card-shine"></div>
                 </div>
-            </div>
 
-            <!-- God of Air -->
-            <div class="hero-card" data-hero="goa">
-                <div class="hero-card-inner">
-                    <div class="hero-icon air-icon">
-                        <div class="icon-particles"></div>
-                        <svg viewBox="0 0 100 100" class="hero-symbol">
-                            <path d="M20 30 Q50 20 80 30 M20 50 Q50 40 80 50 M20 70 Q50 60 80 70" stroke="currentColor" fill="none" stroke-width="3"/>
-                        </svg>
+                <!-- God of Fire -->
+                <div class="stack-card" data-hero="gof">
+                    <div class="card-content">
+                        <div class="card-icon">🔥</div>
+                        <div class="card-name">Fire</div>
                     </div>
-                    <h2 class="hero-name">Air</h2>
-                    <p class="hero-element">God of Air</p>
-                    <div class="hero-power-bar">
-                        <div class="power-fill" style="width: 90%"></div>
-                    </div>
+                    <div class="card-shine"></div>
                 </div>
-            </div>
 
-            <!-- God of Metal -->
-            <div class="hero-card" data-hero="gom">
-                <div class="hero-card-inner">
-                    <div class="hero-icon metal-icon">
-                        <div class="icon-particles"></div>
-                        <svg viewBox="0 0 100 100" class="hero-symbol">
-                            <rect x="30" y="30" width="40" height="40" fill="currentColor"/>
-                            <path d="M50 30 L70 50 L50 70 L30 50 Z" fill="none" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                <!-- God of Water -->
+                <div class="stack-card" data-hero="gow">
+                    <div class="card-content">
+                        <div class="card-icon">🌊</div>
+                        <div class="card-name">Water</div>
                     </div>
-                    <h2 class="hero-name">Metal</h2>
-                    <p class="hero-element">God of Metal</p>
-                    <div class="hero-power-bar">
-                        <div class="power-fill" style="width: 85%"></div>
-                    </div>
+                    <div class="card-shine"></div>
                 </div>
-            </div>
 
-            <!-- God of Earth -->
-            <div class="hero-card" data-hero="goe">
-                <div class="hero-card-inner">
-                    <div class="hero-icon earth-icon">
-                        <div class="icon-particles"></div>
-                        <svg viewBox="0 0 100 100" class="hero-symbol">
-                            <path d="M30 70 L40 50 L30 40 L50 30 L60 45 L70 35 L70 70 Z" fill="currentColor"/>
-                        </svg>
+                <!-- God of Air -->
+                <div class="stack-card" data-hero="goa">
+                    <div class="card-content">
+                        <div class="card-icon">💨</div>
+                        <div class="card-name">Air</div>
                     </div>
-                    <h2 class="hero-name">Earth</h2>
-                    <p class="hero-element">God of Earth</p>
-                    <div class="hero-power-bar">
-                        <div class="power-fill" style="width: 87%"></div>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- God of Metal -->
+                <div class="stack-card" data-hero="gom">
+                    <div class="card-content">
+                        <div class="card-icon">⚒️</div>
+                        <div class="card-name">Metal</div>
                     </div>
+                    <div class="card-shine"></div>
+                </div>
+
+                <!-- God of Earth -->
+                <div class="stack-card" data-hero="goe">
+                    <div class="card-content">
+                        <div class="card-icon">🌿</div>
+                        <div class="card-name">Earth</div>
+                    </div>
+                    <div class="card-shine"></div>
                 </div>
             </div>
         </div>
-
-        <!-- Ambient Particles -->
-        <div class="ambient-particles"></div>
     </div>
 
-    <!-- Detail Page Template (Hidden by default) -->
-    <div class="detail-page" id="detail-page" style="display: none;">
-        <button class="back-button">← Back</button>
-        
-        <div class="detail-content">
-            <div class="detail-left">
-                <div class="hero-showcase">
-                    <div class="showcase-particles"></div>
-                    <div class="hero-large-icon"></div>
-                </div>
-            </div>
-            
-            <div class="detail-right">
-                <h1 class="detail-hero-name"></h1>
-                <p class="detail-hero-title"></p>
-                
-                <div class="stats-section">
-                    <h3>Divine Powers</h3>
-                    <div class="stat-item">
-                        <span class="stat-label">Power</span>
-                        <div class="stat-bar"><div class="stat-value"></div></div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Control</span>
-                        <div class="stat-bar"><div class="stat-value"></div></div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Wisdom</span>
-                        <div class="stat-bar"><div class="stat-value"></div></div>
-                    </div>
-                </div>
-                
-                <div class="description-section">
-                    <h3>About</h3>
-                    <p class="hero-description"></p>
-                </div>
-                
-                <div class="abilities-section">
-                    <h3>Divine Abilities</h3>
-                    <ul class="abilities-list"></ul>
-                </div>
-                
-                <button class="play-button">PLAY NOW</button>
-            </div>
+    <!-- Detail Modal (for abilities) -->
+    <div class="detail-modal" id="detail-modal">
+        <button class="modal-close" id="modal-close">✕</button>
+        <div class="modal-content">
+            <h2 class="modal-title">Divine Abilities</h2>
+            <div class="abilities-grid" id="abilities-grid"></div>
         </div>
     </div>
 
