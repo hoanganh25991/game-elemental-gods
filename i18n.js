@@ -11,6 +11,7 @@
 
 const STORAGE_KEY = "gof.lang";
 const DEFAULT_LANG = "vi";
+const SUPPORTED_LANGS = ["en", "vi"];
 
 /**
  * LOCALES cache structure:
@@ -21,10 +22,51 @@ const DEFAULT_LANG = "vi";
  */
 const LOCALES = {};
 
+/**
+ * Detect browser language from navigator API
+ * Returns a supported language code or null if not found
+ */
+function detectBrowserLanguage() {
+  try {
+    // Get browser language (e.g., "en-US", "vi-VN", "en")
+    const browserLang = navigator.language || navigator.userLanguage || "";
+    
+    // Extract the primary language code (e.g., "en" from "en-US")
+    const langCode = browserLang.split("-")[0].toLowerCase();
+    
+    // Check if it's a supported language
+    if (SUPPORTED_LANGS.includes(langCode)) {
+      return langCode;
+    }
+    
+    // Check full language code (e.g., "vi-VN")
+    if (SUPPORTED_LANGS.includes(browserLang.toLowerCase())) {
+      return browserLang.toLowerCase();
+    }
+  } catch (e) {
+    console.warn("Failed to detect browser language:", e);
+  }
+  
+  return null;
+}
+
 let currentLang = (() => {
   try {
+    // Priority 1: Check localStorage (user has explicitly set a language)
     const saved = typeof localStorage !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
-    return saved || DEFAULT_LANG;
+    if (saved && SUPPORTED_LANGS.includes(saved)) {
+      return saved;
+    }
+    
+    // Priority 2: Detect browser language (first time user)
+    const detected = detectBrowserLanguage();
+    if (detected) {
+      console.log("Detected browser language:", detected);
+      return detected;
+    }
+    
+    // Priority 3: Fall back to default language
+    return DEFAULT_LANG;
   } catch (e) {
     return DEFAULT_LANG;
   }

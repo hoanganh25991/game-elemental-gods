@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Choose your elemental champion from the Pantheon of Gods. Command thunder, fire, water, air, metal, or earth in epic divine battles.">
+    <meta name="description"
+        content="Choose your elemental champion from the Pantheon of Gods. Command thunder, fire, water, air, metal, or earth in epic divine battles.">
     <meta name="keywords" content="elemental gods, mythology game, divine champions, battle game, elemental powers">
     <meta name="author" content="Elemental Gods">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Elemental Gods - Choose Your Divine Champion">
-    <meta property="og:description" content="Master the elements and command divine powers. Choose from 6 legendary gods - Thunder, Fire, Water, Air, Metal, and Earth. Enter the grand stage and unleash your elemental fury.">
+    <meta property="og:description"
+        content="Master the elements and command divine powers. Choose from 6 legendary gods - Thunder, Fire, Water, Air, Metal, and Earth. Enter the grand stage and unleash your elemental fury.">
     <meta property="og:image" content="image/background.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hoanganh25991.github.io/game-elemental-gods/">
     <meta property="og:site_name" content="Elemental Gods">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Elemental Gods - Choose Your Divine Champion">
-    <meta name="twitter:description" content="Master the elements and command divine powers. Choose from 6 legendary gods and enter epic battles.">
+    <meta name="twitter:description"
+        content="Master the elements and command divine powers. Choose from 6 legendary gods and enter epic battles.">
     <meta name="twitter:image" content="image/background.png">
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
-    
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ff6b35">
-    
+
     <title>Elemental Gods - The Grand Stage</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="landscape.css">
 </head>
+
 <body>
     <!-- Home Screen -->
     <div class="home-screen" id="home-screen">
@@ -66,7 +71,8 @@
             <div class="stage-content">
                 <!-- Hero Figure -->
                 <div class="hero-figure">
-                    <img id="hero-image" src="image/got-heroic-figure-standing.png" alt="Hero" onerror="this.style.display='none'">
+                    <img id="hero-image" src="image/got-heroic-figure-standing.png" alt="Hero"
+                        onerror="this.style.display='none'">
                     <div class="figure-glow"></div>
                 </div>
 
@@ -75,7 +81,7 @@
                     <div class="hero-rank">DIVINE CHAMPION</div>
                     <h1 class="stage-hero-name">THOR</h1>
                     <p class="stage-hero-title">God of Thunder</p>
-                    
+
                     <div class="hero-stats-display">
                         <div class="stat-circle">
                             <div class="stat-value" data-stat="power">95</div>
@@ -178,70 +184,77 @@
     <div class="rotate-overlay">
         <div>
             <div style="font-size: 64px; margin-bottom: 20px;">📱</div>
-            <h2>Rotate Your Device</h2>
-            <p>Please rotate your device to landscape mode for the best gaming experience.</p>
+            <h2 data-i18n="rotate.title">Rotate Your Device</h2>
+            <p data-i18n="rotate.message">Please rotate your device to landscape mode for the best gaming experience.
+            </p>
         </div>
     </div>
 
     <!-- Lock Zoom Script -->
     <script src="lock-zoom.js"></script>
-    
+
     <!-- Service Worker Registration -->
     <script>
         // Register Service Worker for PWA functionality
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./serviceworker.js')
-                    .then((registration) => {
-                        console.log('ServiceWorker registered successfully:', registration.scope);
-                        
-                        // Check for updates
-                        registration.addEventListener('updatefound', () => {
-                            const newWorker = registration.installing;
-                            console.log('New ServiceWorker found, installing...');
-                            
-                            newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    console.log('New ServiceWorker installed, ready to activate');
-                                    // Optionally show update notification to user
-                                }
+            if (window.location.hostname == "localhost") {
+                console.log("Skip serviceworker on localhost");
+            } else {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./serviceworker.js')
+                        .then((registration) => {
+                            console.log('ServiceWorker registered successfully:', registration.scope);
+
+                            // Check for updates
+                            registration.addEventListener('updatefound', () => {
+                                const newWorker = registration.installing;
+                                console.log('New ServiceWorker found, installing...');
+
+                                newWorker.addEventListener('statechange', () => {
+                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                        console.log('New ServiceWorker installed, ready to activate');
+                                        // Optionally show update notification to user
+                                    }
+                                });
                             });
+                        })
+                        .catch((error) => {
+                            console.error('ServiceWorker registration failed:', error);
                         });
-                    })
-                    .catch((error) => {
-                        console.error('ServiceWorker registration failed:', error);
-                    });
-            });
-            
-            // Handle service worker updates
-            let refreshing = false;
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-                if (!refreshing) {
-                    refreshing = true;
-                    console.log('ServiceWorker controller changed, reloading page...');
-                    window.location.reload();
-                }
-            });
+                });
+
+                // Handle service worker updates
+                let refreshing = false;
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    if (!refreshing) {
+                        refreshing = true;
+                        console.log('ServiceWorker controller changed, reloading page...');
+                        window.location.reload();
+                    }
+                });
+            }
+
         }
-        
+
         // PWA Install Prompt Handler
         let deferredPrompt;
         window.addEventListener('beforeinstallprompt', (e) => {
             console.log('PWA install prompt available');
             e.preventDefault();
             deferredPrompt = e;
-            
+
             // Optionally show custom install button
             // You can add UI here to prompt user to install
         });
-        
+
         // Track PWA installation
         window.addEventListener('appinstalled', () => {
             console.log('PWA installed successfully');
             deferredPrompt = null;
         });
     </script>
-    
+
     <script type="module" src="src/main.js"></script>
 </body>
+
 </html>

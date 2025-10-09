@@ -3,8 +3,10 @@
 .rotate-overlay {
   position: fixed;
   inset: 0;
+  top: 0px;
+  left: 0px;
   z-index: 99999;
-  background: var(--bg-radial-fire);
+  background: radial-gradient(ellipse at center, #1a1a2e 0%, #000 100%);
   display: none;
   align-items: center;
   justify-content: center;

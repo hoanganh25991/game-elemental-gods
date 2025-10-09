@@ -445,11 +445,21 @@ function handleResponsiveScaling() {
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         
+        // Check if rotate-overlay is visible
+        const rotateOverlay = document.querySelector('.rotate-overlay');
+        const isRotateOverlayVisible = rotateOverlay && window.getComputedStyle(rotateOverlay).display !== 'none';
+        
         // Reset any previous scaling and styles
         container.style.transform = 'none';
         container.style.transformOrigin = 'top left';
         document.documentElement.style.height = '';
         document.documentElement.style.overflow = '';
+        
+        // Skip scaling if rotate overlay is visible
+        if (isRotateOverlayVisible) {
+            console.log('Rotate overlay visible - skipping body transform scale');
+            return;
+        }
         
         // Check if we need to scale down (for small screens)
         if (windowHeight < minHeight || windowWidth < minWidth) {

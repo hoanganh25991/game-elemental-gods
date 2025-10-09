@@ -16,6 +16,11 @@
     "play": "CHƠI NGAY"
   },
   
+  "rotate": {
+    "title": "Xoay Thiết Bị",
+    "message": "Vui lòng xoay thiết bị sang chế độ ngang để có trải nghiệm chơi game tốt nhất."
+  },
+  
   "elements": {
     "thunder": "Sấm Sét",
     "fire": "Lửa",
