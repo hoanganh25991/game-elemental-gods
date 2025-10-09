@@ -4,7 +4,7 @@
  * Provides offline support and caching strategies
  */
 
-const CACHE_NAME = 'elemental-gods-v1.0.1';
+const CACHE_NAME = 'elemental-gods-v1.0.2';
 const RUNTIME_CACHE = 'elemental-gods-runtime-v1';
 
 // Assets to cache on install
@@ -27,7 +27,8 @@ const PRECACHE_ASSETS = [
   './image/gof-heroic-figure-standing.png',
   './image/gom-heroic-figure-standing.png',
   './image/got-heroic-figure-standing.png',
-  './image/gow-heroic-figure-standing.png'
+  './image/gow-heroic-figure-standing.png',
+  './audio/background-music.mp3'
 ];
 
 // Install event - cache essential assets

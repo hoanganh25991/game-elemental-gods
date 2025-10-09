@@ -1,6 +1,79 @@
 // Import i18n module
 import { initI18n, setLanguage, getLanguage, t, loadLocale } from '../i18n.js';
 
+// Background music audio element
+let backgroundMusic = null;
+
+// Initialize background music
+function initBackgroundMusic() {
+    backgroundMusic = new Audio('./audio/background-music.mp3');
+    backgroundMusic.loop = true;
+    backgroundMusic.volume = 0.3; // Set volume to 30% for relaxed background music
+    
+    // Preload the audio
+    backgroundMusic.preload = 'auto';
+    
+    // Handle audio loading errors
+    backgroundMusic.addEventListener('error', (e) => {
+        console.warn('Background music failed to load:', e);
+    });
+}
+
+// Play background music
+function playBackgroundMusic() {
+    if (backgroundMusic) {
+        backgroundMusic.play().catch(err => {
+            console.warn('Error playing background music:', err);
+        });
+    }
+}
+
+// Stop background music
+function stopBackgroundMusic() {
+    if (backgroundMusic) {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+    }
+}
+
+// Pause background music
+function pauseBackgroundMusic() {
+    if (backgroundMusic && !backgroundMusic.paused) {
+        backgroundMusic.pause();
+    }
+}
+
+// Resume background music
+function resumeBackgroundMusic() {
+    if (backgroundMusic && backgroundMusic.paused) {
+        backgroundMusic.play().catch(err => {
+            console.warn('Error resuming background music:', err);
+        });
+    }
+}
+
+// Handle page visibility changes (pause music when tab is not active)
+function setupVisibilityHandler() {
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            // Page is hidden (user switched tabs or minimized)
+            pauseBackgroundMusic();
+        } else {
+            // Page is visible again
+            resumeBackgroundMusic();
+        }
+    });
+    
+    // Also handle window blur/focus events for better compatibility
+    window.addEventListener('blur', () => {
+        pauseBackgroundMusic();
+    });
+    
+    window.addEventListener('focus', () => {
+        resumeBackgroundMusic();
+    });
+}
+
 // Hero Data Configuration
 const heroData = {
     got: {
@@ -523,6 +596,9 @@ function setupHomeScreen() {
     
     // Handle start button click
     startButton.addEventListener('click', () => {
+        // Play background music when start is clicked
+        playBackgroundMusic();
+        
         // Request fullscreen
         const docEl = document.documentElement;
         
@@ -550,6 +626,12 @@ function setupHomeScreen() {
 async function init() {
     // Initialize i18n system
     await initI18n();
+    
+    // Initialize background music
+    initBackgroundMusic();
+    
+    // Setup visibility handler for pausing music when page is not focused
+    setupVisibilityHandler();
     
     // Update all UI labels
     updateUILabels();
