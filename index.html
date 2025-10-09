@@ -32,8 +32,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff6b35">
+    
     <title>Elemental Gods - The Grand Stage</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="landscape.css">
 </head>
 <body>
     <!-- Home Screen -->
@@ -169,6 +174,74 @@
         </div>
     </div>
 
+    <!-- Rotate Overlay for Mobile Portrait Mode -->
+    <div class="rotate-overlay">
+        <div>
+            <div style="font-size: 64px; margin-bottom: 20px;">📱</div>
+            <h2>Rotate Your Device</h2>
+            <p>Please rotate your device to landscape mode for the best gaming experience.</p>
+        </div>
+    </div>
+
+    <!-- Lock Zoom Script -->
+    <script src="lock-zoom.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        // Register Service Worker for PWA functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./serviceworker.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker registered successfully:', registration.scope);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            console.log('New ServiceWorker found, installing...');
+                            
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    console.log('New ServiceWorker installed, ready to activate');
+                                    // Optionally show update notification to user
+                                }
+                            });
+                        });
+                    })
+                    .catch((error) => {
+                        console.error('ServiceWorker registration failed:', error);
+                    });
+            });
+            
+            // Handle service worker updates
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (!refreshing) {
+                    refreshing = true;
+                    console.log('ServiceWorker controller changed, reloading page...');
+                    window.location.reload();
+                }
+            });
+        }
+        
+        // PWA Install Prompt Handler
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('PWA install prompt available');
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Optionally show custom install button
+            // You can add UI here to prompt user to install
+        });
+        
+        // Track PWA installation
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA installed successfully');
+            deferredPrompt = null;
+        });
+    </script>
+    
     <script type="module" src="src/main.js"></script>
 </body>
 </html>

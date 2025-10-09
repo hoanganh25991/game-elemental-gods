@@ -1,0 +1,86 @@
+{
+  "id": "./",
+  "start_url": "./",
+  "name": "Elemental Gods - Divine Champions",
+  "short_name": "Elemental Gods",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#1a1a2e",
+  "theme_color": "#ff6b35",
+  "description": "Choose your elemental champion from the Pantheon of Gods. Command thunder, fire, water, air, metal, or earth in epic divine battles.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "lang": "en",
+  "categories": [
+    "games",
+    "entertainment",
+    "action"
+  ],
+  "dir": "ltr",
+  "scope": "./",
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "image/background.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Thunder God",
+      "short_name": "Thunder",
+      "description": "Play as the God of Thunder",
+      "url": "./?hero=got",
+      "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Fire God",
+      "short_name": "Fire",
+      "description": "Play as the God of Fire",
+      "url": "./?hero=gof",
+      "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Water God",
+      "short_name": "Water",
+      "description": "Play as the God of Water",
+      "url": "./?hero=gow",
+      "icons": [
+        {
+          "src": "icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
