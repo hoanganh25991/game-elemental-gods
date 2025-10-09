@@ -1,6 +1,11 @@
 {
   "title": "Elemental Gods - Grand Arena",
   
+  "home": {
+    "title": "ELEMENTAL GODS",
+    "start": "START"
+  },
+  
   "ui": {
     "heroRank": "HERO #1",
     "power": "POWER",

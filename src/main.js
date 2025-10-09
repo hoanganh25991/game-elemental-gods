@@ -348,6 +348,17 @@ function hideAbilitiesModal() {
 
 // Update UI labels with translations
 function updateUILabels() {
+    // Update home screen elements
+    const homeTitle = document.querySelector('.home-title');
+    if (homeTitle) {
+        homeTitle.textContent = t('home.title');
+    }
+    
+    const startButton = document.getElementById('start-button');
+    if (startButton) {
+        startButton.textContent = t('home.start');
+    }
+    
     // Update hero rank
     const heroRank = document.querySelector('.hero-rank');
     if (heroRank) {
@@ -369,7 +380,7 @@ function updateUILabels() {
     }
 
     // Update modal title
-    const modalTitle = document.getElementById('modal-title');
+    const modalTitle = document.querySelector('.modal-title');
     if (modalTitle) {
         modalTitle.textContent = t('ui.abilities');
     }
@@ -377,7 +388,7 @@ function updateUILabels() {
     // Update play button
     const playButton = document.getElementById('play-button');
     if (playButton) {
-        playButton.textContent = t('ui.play');
+        playButton.querySelector('.btn-text').textContent = t('ui.play');
     }
 
     // Update card names
@@ -424,6 +435,107 @@ async function changeLanguage(lang) {
     });
 }
 
+// Handle responsive scaling for small screens
+function handleResponsiveScaling() {
+    const container = document.body;
+    const minHeight = 600; // Minimum height before scaling
+    const minWidth = 1000; // Minimum width before scaling
+    
+    function updateScale() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        
+        // Reset any previous scaling and styles
+        container.style.transform = 'none';
+        container.style.transformOrigin = 'top left';
+        document.documentElement.style.height = '';
+        document.documentElement.style.overflow = '';
+        
+        // Check if we need to scale down (for small screens)
+        if (windowHeight < minHeight || windowWidth < minWidth) {
+            // Calculate scale factors for width and height
+            const scaleX = windowWidth / minWidth;
+            const scaleY = windowHeight / minHeight;
+            
+            // Use the smaller scale factor to ensure everything fits
+            let scale = Math.min(scaleX, scaleY);
+            
+            // Cap at 0.8 to prevent content from becoming too small
+            scale = Math.max(scale, 0.5);
+            scale = Math.min(scale, 0.8);
+            
+            // Calculate the horizontal centering offset
+            const horizontalOffset = Math.max(0, (windowWidth - (minWidth * scale)) / 2);
+            
+            // Calculate the vertical offset (only used for very small screens)
+            const verticalOffset = Math.max(0, (windowHeight - (minHeight * scale)) / 2);
+            
+            // Apply transform with translate for proper centering
+            if (windowWidth > windowHeight) { // Landscape mode
+                if (windowHeight < 500) {
+                    // For very small landscape screens, center both horizontally and vertically
+                    container.style.transform = `translate(${horizontalOffset}px, ${verticalOffset}px) scale(${scale})`;
+                } else {
+                    // For normal landscape, just center horizontally
+                    container.style.transform = `translateX(${horizontalOffset}px) scale(${scale})`;
+                }
+            } else { // Portrait mode
+                // For portrait, center horizontally
+                container.style.transform = `translateX(${horizontalOffset}px) scale(${scale})`;
+            }
+            
+            // Adjust body height to prevent scrollbars
+            document.documentElement.style.height = '100%';
+            document.documentElement.style.overflow = 'hidden';
+            
+            // Log scaling information for debugging
+            console.log(`Scaling: ${scale.toFixed(2)}, Offset X: ${horizontalOffset.toFixed(0)}px, Y: ${verticalOffset.toFixed(0)}px`);
+        }
+    }
+    
+    // Update on resize and orientation change
+    window.addEventListener('resize', updateScale);
+    window.addEventListener('orientationchange', function() {
+        // Small delay to ensure dimensions are updated after orientation change
+        setTimeout(updateScale, 100);
+    });
+    
+    // Initial update
+    updateScale();
+}
+
+// Handle home screen functionality
+function setupHomeScreen() {
+    const homeScreen = document.getElementById('home-screen');
+    const startButton = document.getElementById('start-button');
+    
+    if (!homeScreen || !startButton) return;
+    
+    // Handle start button click
+    startButton.addEventListener('click', () => {
+        // Request fullscreen
+        const docEl = document.documentElement;
+        
+        if (docEl.requestFullscreen) {
+            docEl.requestFullscreen().catch(err => {
+                console.warn('Error attempting to enable fullscreen:', err);
+            });
+        } else if (docEl.webkitRequestFullscreen) {
+            docEl.webkitRequestFullscreen();
+        } else if (docEl.msRequestFullscreen) {
+            docEl.msRequestFullscreen();
+        }
+        
+        // Hide home screen with animation
+        homeScreen.classList.add('hidden');
+        
+        // Remove from DOM after animation completes
+        setTimeout(() => {
+            homeScreen.style.display = 'none';
+        }, 1000);
+    });
+}
+
 // Initialize the application
 async function init() {
     // Initialize i18n system
@@ -431,6 +543,12 @@ async function init() {
     
     // Update all UI labels
     updateUILabels();
+    
+    // Set up home screen
+    setupHomeScreen();
+    
+    // Initialize responsive scaling for small screens
+    handleResponsiveScaling();
     
     // Set initial theme
     applyTheme(currentHero);

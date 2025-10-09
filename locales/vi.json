@@ -1,6 +1,11 @@
 {
   "title": "Thần Nguyên Tố - Đấu Trường Vĩ Đại",
   
+  "home": {
+    "title": "THẦN NGUYÊN TỐ",
+    "start": "BẮT ĐẦU"
+  },
+  
   "ui": {
     "heroRank": "VỊ THẦN #1",
     "power": "SỨC MẠNH",
