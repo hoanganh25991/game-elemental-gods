@@ -1,8 +1,8 @@
 {
   "id": "./",
   "start_url": "./",
-  "name": "Elemental Gods - Divine Champions",
-  "short_name": "Elemental Gods",
+  "name": "EgS RPG",
+  "short_name": "EgS",
   "display": "fullscreen",
   "orientation": "landscape",
   "background_color": "#1a1a2e",
