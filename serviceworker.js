@@ -4,7 +4,7 @@
  * Provides offline support and caching strategies
  */
 
-const CACHE_NAME = 'egs-v1.0.0-20251010';
+const CACHE_NAME = 'egs-v1.0.1-20251010';
 const RUNTIME_CACHE = 'elemental-gods-runtime-v1';
 
 // Assets to cache on install
